@@ -118,7 +118,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
+var elmBook = document.querySelector(".book");
 
+function setSelectedColor() {
+  var checked = document.querySelector(".bg_radio input:checked");
+  elmBook.setAttribute("data-color", checked.value);
+}
+
+setSelectedColor();
+document.querySelector(".bg_radio").addEventListener("change", setSelectedColor);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -1,8 +1,6 @@
 @import "normalize.scss";
 
-$bg-grey: #e8e8e8;
-$bg-yellow: #E8E7B2;
-$bg-white: white;
+$spacing: 10px;
 
 @font-face {
   font-family: Claude;
@@ -31,15 +29,36 @@ html {
 
 body > section {
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding: $spacing;
 }
+
+.two_col {
+  display: flex;
+
+  .col_1 {
+    width: 80px;
+  }
+}
+
+/* ---------------- section letter ---------------- */
+
+.letter_list {
+  font-family: "Claude";
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+/* ---------------- section book ---------------- */
+
+$bg-grey: #F9F9F9;
+$bg-yellow: #E8E7B2;
+$bg-white: white;
 
 .book {
   font-family: "Claude";
   font-size: 1.5rem;
-  width: 800px;
+  width: 1000px;
   padding: 3rem 6rem;
-  background: #f9f9f9;
   font-weight: normal;
 
   .h1 {
@@ -51,14 +70,23 @@ body > section {
     font-size: 2rem;
     font-weight: normal;
   }
-}
 
-.letter_list {
-  font-family: "Claude";
-  font-size: 10rem;
+  &[data-color='yellow'] {
+    background: $bg-yellow;
+  }
+
+  &[data-color='grey'] {
+    background: $bg-grey;
+  }
+
+  &[data-color='white'] {
+    background: $bg-white;
+  }
 }
 
 .bg_radio {
+  margin: $spacing 0;
+
   label {
     display: inline-block;
   }

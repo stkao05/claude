@@ -366,12 +366,26 @@ body > section {
   padding: 10px;
 }
 
+.two_col {
+  display: flex;
+}
+.two_col .col_1 {
+  width: 80px;
+}
+
+/* ---------------- section letter ---------------- */
+.letter_list {
+  font-family: "Claude";
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+/* ---------------- section book ---------------- */
 .book {
   font-family: "Claude";
   font-size: 1.5rem;
-  width: 800px;
+  width: 1000px;
   padding: 3rem 6rem;
-  background: #f9f9f9;
   font-weight: normal;
 }
 .book .h1 {
@@ -382,12 +396,19 @@ body > section {
   font-size: 2rem;
   font-weight: normal;
 }
-
-.letter_list {
-  font-family: "Claude";
-  font-size: 10rem;
+.book[data-color=yellow] {
+  background: #E8E7B2;
+}
+.book[data-color=grey] {
+  background: #F9F9F9;
+}
+.book[data-color=white] {
+  background: white;
 }
 
+.bg_radio {
+  margin: 10px 0;
+}
 .bg_radio label {
   display: inline-block;
 }
@@ -405,7 +426,7 @@ body > section {
   height: 20px;
 }
 .bg_radio input[value=grey] ~ span {
-  background: #e8e8e8;
+  background: #F9F9F9;
 }
 .bg_radio input[value=yellow] ~ span {
   background: #E8E7B2;
