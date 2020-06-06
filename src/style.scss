@@ -1,0 +1,96 @@
+@import "normalize.scss";
+
+$bg-grey: #e8e8e8;
+$bg-yellow: #E8E7B2;
+$bg-white: white;
+
+@font-face {
+  font-family: Claude;
+  src: url("./claude_gx.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.f1 {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+body > section {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.book {
+  font-family: "Claude";
+  font-size: 1.5rem;
+  width: 800px;
+  padding: 3rem 6rem;
+  background: #f9f9f9;
+  font-weight: normal;
+
+  .h1 {
+    font-size: 6rem;
+    font-weight: normal;
+  }
+
+  .h2 {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+}
+
+.letter_list {
+  font-family: "Claude";
+  font-size: 10rem;
+}
+
+.bg_radio {
+  label {
+    display: inline-block;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input ~ span {
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  input[value='grey'] ~ span {
+    background: $bg-grey;
+  }
+
+  input[value='yellow'] ~ span {
+    background: $bg-yellow;
+  }
+
+  input[value='white'] ~ span {
+    background: $bg-white;
+  }
+
+  input:checked ~ span {
+    border: 1px solid black;
+  }
+}

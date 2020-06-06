@@ -1,0 +1,24 @@
+{
+  "name": "claude",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel -d ./docs src/index.html",
+    "build": "parcel build -d ./docs src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stkao05/claude.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stkao05/claude/issues"
+  },
+  "homepage": "https://github.com/stkao05/claude#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.8"
+  }
+}
