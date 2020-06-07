@@ -339,7 +339,7 @@ template {
 
 @font-face {
   font-family: Claude;
-  src: url("/claude_gx.a56067a8.ttf");
+  src: url("/claude.5ad181b4.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -363,7 +363,7 @@ html {
 
 body > section {
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding-top: 12px;
 }
 
 .two_col {
@@ -379,35 +379,52 @@ body > section {
   font-size: 10rem;
   font-weight: normal;
 }
-
+.letter_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
 /* ---------------- section book ---------------- */
 .book {
-  font-family: "Claude";
-  font-size: 1.5rem;
-  width: 1000px;
-  padding: 3rem 6rem;
+  font-family: Claude;
+  max-width: 750px;
+  padding: 48px 72px;
   font-weight: normal;
 }
-.book .h1 {
-  font-size: 6rem;
-  font-weight: normal;
+@media (max-width: 750px) {
+  .book {
+    padding: 36px 12px;
+  }
 }
+.book h1 {
+  font-size: 72px;
+  font-weight: normal;
+  font-variation-settings: "opsz" 72;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.book h2,
 .book .h2 {
-  font-size: 2rem;
+  font-size: 24px;
   font-weight: normal;
+  font-variation-settings: "opsz" 24;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.book p {
+  font-size: 17px;
+  font-weight: normal;
+  font-variation-settings: "opsz" 17;
 }
 .book[data-color=yellow] {
-  background: #E8E7B2;
+  background: #e8e7b2;
 }
 .book[data-color=grey] {
-  background: #F9F9F9;
-}
-.book[data-color=white] {
-  background: white;
+  background: #f9f9f9;
 }
 
 .bg_radio {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 .bg_radio label {
   display: inline-block;
@@ -426,13 +443,10 @@ body > section {
   height: 20px;
 }
 .bg_radio input[value=grey] ~ span {
-  background: #F9F9F9;
+  background: #f9f9f9;
 }
 .bg_radio input[value=yellow] ~ span {
-  background: #E8E7B2;
-}
-.bg_radio input[value=white] ~ span {
-  background: white;
+  background: #e8e7b2;
 }
 .bg_radio input:checked ~ span {
   border: 1px solid black;

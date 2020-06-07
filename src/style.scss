@@ -1,10 +1,10 @@
 @import "normalize.scss";
 
-$spacing: 10px;
+$spacing: 12px;
 
 @font-face {
   font-family: Claude;
-  src: url("./claude_gx.ttf");
+  src: url("./claude.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,7 @@ html {
 
 body > section {
   border-bottom: 1px solid black;
-  padding: $spacing;
+  padding-top: $spacing;
 }
 
 .two_col {
@@ -46,42 +46,63 @@ body > section {
   font-family: "Claude";
   font-size: 10rem;
   font-weight: normal;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+    }
+  }
 }
 
 /* ---------------- section book ---------------- */
 
-$bg-grey: #F9F9F9;
-$bg-yellow: #E8E7B2;
-$bg-white: white;
+$bg-grey: #f9f9f9;
+$bg-yellow: #e8e7b2;
 
 .book {
-  font-family: "Claude";
-  font-size: 1.5rem;
-  width: 1000px;
-  padding: 3rem 6rem;
+  font-family: Claude;
+  max-width: 750px;
+  padding: 48px 72px;
   font-weight: normal;
 
-  .h1 {
-    font-size: 6rem;
-    font-weight: normal;
+  @media (max-width: 750px) {
+    padding: 36px 12px;
   }
 
+  h1 {
+    font-size: 72px;
+    font-weight: normal;
+    font-variation-settings: "opsz" 72;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  h2,
   .h2 {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: normal;
+    font-variation-settings: "opsz" 24;
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 
-  &[data-color='yellow'] {
+  p {
+    font-size: 17px;
+    font-weight: normal;
+    font-variation-settings: "opsz" 17;
+  }
+
+  &[data-color="yellow"] {
     background: $bg-yellow;
   }
 
-  &[data-color='grey'] {
+  &[data-color="grey"] {
     background: $bg-grey;
   }
 
-  &[data-color='white'] {
-    background: $bg-white;
-  }
 }
 
 .bg_radio {
@@ -106,16 +127,12 @@ $bg-white: white;
     height: 20px;
   }
 
-  input[value='grey'] ~ span {
+  input[value="grey"] ~ span {
     background: $bg-grey;
   }
 
-  input[value='yellow'] ~ span {
+  input[value="yellow"] ~ span {
     background: $bg-yellow;
-  }
-
-  input[value='white'] ~ span {
-    background: $bg-white;
   }
 
   input:checked ~ span {
