@@ -54,14 +54,14 @@ body > section {
 }
 
 .letter_list {
-  max-width: 1000px;
-
   font-family: Claude;
-  font-size: 96px;
+  font-size: 6vw;
   font-weight: normal;
-  font-variation-settings: "opsz" 96;
-
   padding: $spacing $spacing 1em $spacing;
+
+  @media (max-width: 750px) {
+    font-size: 10vw;
+  }
 
   ul {
     display: flex;
