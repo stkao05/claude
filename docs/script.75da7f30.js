@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-var elmBook = document.querySelector(".book");
+var elmBook = document.querySelector(".book_content");
 
 function setSelectedColor() {
   var checked = document.querySelector(".bg_radio input:checked");

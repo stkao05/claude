@@ -344,26 +344,31 @@ template {
   font-style: normal;
 }
 html {
-  font-size: 18px;
+  font-size: 14px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+footer {
+  padding: 12px;
+}
+footer p {
+  margin: 0;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.f1 {
-  color: black;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1em;
-  margin: 0;
-  padding: 0;
-}
-
 body > section {
   border-bottom: 1px solid black;
   padding-top: 12px;
+}
+
+.f1 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0px;
 }
 
 .two_col {
@@ -374,52 +379,62 @@ body > section {
 }
 
 /* ---------------- section letter ---------------- */
+.section_letter {
+  padding: 12px;
+}
+
 .letter_list {
-  font-family: "Claude";
-  font-size: 10rem;
+  max-width: 1000px;
+  font-family: Claude;
+  font-size: 96px;
   font-weight: normal;
+  font-variation-settings: "opsz" 96;
+  padding: 12px 12px 1em 12px;
 }
 .letter_list ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
 /* ---------------- section book ---------------- */
-.book {
+.book_content {
   font-family: Claude;
   max-width: 750px;
   padding: 48px 72px;
   font-weight: normal;
 }
 @media (max-width: 750px) {
-  .book {
+  .book_content {
     padding: 36px 12px;
   }
 }
-.book h1 {
+.book_content h1 {
   font-size: 72px;
   font-weight: normal;
   font-variation-settings: "opsz" 72;
   margin-top: 0;
   margin-bottom: 1em;
 }
-.book h2,
-.book .h2 {
+.book_content h2,
+.book_content .h2 {
   font-size: 24px;
   font-weight: normal;
   font-variation-settings: "opsz" 24;
   margin-top: 0;
   margin-bottom: 1em;
 }
-.book p {
+.book_content p {
   font-size: 17px;
   font-weight: normal;
   font-variation-settings: "opsz" 17;
 }
-.book[data-color=yellow] {
+.book_content[data-color=yellow] {
   background: #e8e7b2;
 }
-.book[data-color=grey] {
+.book_content[data-color=grey] {
   background: #f9f9f9;
 }
 
@@ -428,6 +443,7 @@ body > section {
 }
 .bg_radio label {
   display: inline-block;
+  cursor: pointer;
 }
 .bg_radio input {
   position: absolute;

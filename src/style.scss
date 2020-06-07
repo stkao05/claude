@@ -10,26 +10,33 @@ $spacing: 12px;
 }
 
 html {
-  font-size: 18px;
+  font-size: 14px;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+footer {
+  padding: $spacing;
+
+  p {
+    margin: 0;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
 
-.f1 {
-  color: black;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1em;
-  margin: 0;
-  padding: 0;
-}
-
 body > section {
   border-bottom: 1px solid black;
   padding-top: $spacing;
+
+}
+
+.f1 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 0px;
 }
 
 .two_col {
@@ -42,18 +49,27 @@ body > section {
 
 /* ---------------- section letter ---------------- */
 
+.section_letter {
+  padding: $spacing;
+}
+
 .letter_list {
-  font-family: "Claude";
-  font-size: 10rem;
+  max-width: 1000px;
+
+  font-family: Claude;
+  font-size: 96px;
   font-weight: normal;
+  font-variation-settings: "opsz" 96;
+
+  padding: $spacing $spacing 1em $spacing;
 
   ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    padding: 0;
+    margin: 0;
 
-    li {
-    }
   }
 }
 
@@ -62,7 +78,7 @@ body > section {
 $bg-grey: #f9f9f9;
 $bg-yellow: #e8e7b2;
 
-.book {
+.book_content {
   font-family: Claude;
   max-width: 750px;
   padding: 48px 72px;
@@ -102,7 +118,6 @@ $bg-yellow: #e8e7b2;
   &[data-color="grey"] {
     background: $bg-grey;
   }
-
 }
 
 .bg_radio {
@@ -110,6 +125,7 @@ $bg-yellow: #e8e7b2;
 
   label {
     display: inline-block;
+    cursor: pointer;
   }
 
   input {
@@ -139,3 +155,5 @@ $bg-yellow: #e8e7b2;
     border: 1px solid black;
   }
 }
+
+

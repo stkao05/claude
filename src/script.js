@@ -1,4 +1,4 @@
-const elmBook = document.querySelector(".book")
+const elmBook = document.querySelector(".book_content")
 
 function setSelectedColor() {
     const checked = document.querySelector(".bg_radio input:checked")
