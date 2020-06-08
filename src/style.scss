@@ -1,6 +1,9 @@
 @import "normalize.scss";
 
+$spacing-sm: 6px;
 $spacing: 12px;
+$spacing-lg: 72px;
+$section-padding: $spacing-sm;
 
 @font-face {
   font-family: Claude;
@@ -28,29 +31,51 @@ footer {
 
 body > section {
   border-bottom: 1px solid black;
-  padding-top: $spacing;
+  padding: $section-padding 0;
 }
 
 .details_reset {
-  // Remove marker added by the display: list-item browser default
-  > summary {
-    list-style: none;
-  }
-  // Remove marker added by details polyfill
-  > summary::before {
-    display: none;
-  }
-  // Remove marker added by Chrome
-  > summary::-webkit-details-marker {
-    display: none;
-  }
 
   > summary {
+  }
+
+}
+
+details {
+  position: relative;
+
+  > summary {
+    list-style: none;
+    width: 100%;
     cursor: pointer;
   }
 
   > summary:focus {
     outline: none;
+  }
+
+  // Remove marker added by details polyfill
+  > summary::before {
+    display: none;
+  }
+
+  // Remove marker added by Chrome
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  > summary::after {
+    content: "→";
+    position: absolute;
+    right: $section-padding;
+    top: 0;
+  }
+
+  &[open] summary::after {
+    content: "↓";
+    position: absolute;
+    right: $section-padding;
+    top: 0;
   }
 }
 
@@ -69,10 +94,14 @@ body > section {
   }
 }
 
+.detail_content {
+  padding-left: $spacing-lg;
+}
+
 /* ---------------- section letter ---------------- */
 
 .section_letter {
-  padding: $spacing;
+  padding: $spacing-sm;
 }
 
 .letter_list {
@@ -97,13 +126,12 @@ body > section {
 /* ---------------- section read ---------------- */
 
 .section_read {
-
   details {
     position: relative;
   }
 
   summary {
-    background: red;
+    padding-left: $spacing-sm;
   }
 
   details[open] {
