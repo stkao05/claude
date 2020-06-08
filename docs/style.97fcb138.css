@@ -364,6 +364,22 @@ body > section {
   padding-top: 12px;
 }
 
+.details_reset > summary {
+  list-style: none;
+}
+.details_reset > summary::before {
+  display: none;
+}
+.details_reset > summary::-webkit-details-marker {
+  display: none;
+}
+.details_reset > summary {
+  cursor: pointer;
+}
+.details_reset > summary:focus {
+  outline: none;
+}
+
 .f1 {
   font-size: 14px;
   font-weight: 500;
@@ -402,7 +418,19 @@ body > section {
   margin: 0;
 }
 
-/* ---------------- section book ---------------- */
+/* ---------------- section read ---------------- */
+.section_read details {
+  position: relative;
+}
+.section_read summary {
+  background: red;
+}
+.section_read details[open] summary {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .book_content {
   font-family: Claude;
   max-width: 750px;

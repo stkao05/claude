@@ -29,7 +29,29 @@ footer {
 body > section {
   border-bottom: 1px solid black;
   padding-top: $spacing;
+}
 
+.details_reset {
+  // Remove marker added by the display: list-item browser default
+  > summary {
+    list-style: none;
+  }
+  // Remove marker added by details polyfill
+  > summary::before {
+    display: none;
+  }
+  // Remove marker added by Chrome
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  > summary {
+    cursor: pointer;
+  }
+
+  > summary:focus {
+    outline: none;
+  }
 }
 
 .f1 {
@@ -69,11 +91,29 @@ body > section {
     list-style: none;
     padding: 0;
     margin: 0;
-
   }
 }
 
-/* ---------------- section book ---------------- */
+/* ---------------- section read ---------------- */
+
+.section_read {
+
+  details {
+    position: relative;
+  }
+
+  summary {
+    background: red;
+  }
+
+  details[open] {
+    summary {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
 
 $bg-grey: #f9f9f9;
 $bg-yellow: #e8e7b2;
@@ -155,5 +195,3 @@ $bg-yellow: #e8e7b2;
     border: 1px solid black;
   }
 }
-
-
