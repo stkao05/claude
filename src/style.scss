@@ -144,6 +144,7 @@ summary {
 
 $bg-grey: #f9f9f9;
 $bg-yellow: #e8e7b2;
+$bg-white: white;
 
 .book_content {
   font-family: Claude;
@@ -190,6 +191,10 @@ $bg-yellow: #e8e7b2;
     font-size: 12px;
   }
 
+  &[data-color="white"] {
+    background: $bg-white;
+  }
+
   &[data-color="yellow"] {
     background: $bg-yellow;
   }
@@ -220,18 +225,26 @@ $bg-yellow: #e8e7b2;
     border-radius: 50%;
     width: 20px;
     height: 20px;
+    border: 1px solid #dadada;
   }
 
   input[value="grey"] ~ span {
     background: $bg-grey;
+    border-color: $bg-grey;
   }
 
   input[value="yellow"] ~ span {
     background: $bg-yellow;
+    border-color: $bg-yellow;
+  }
+
+  input[value="white"] ~ span {
+    background: $bg-white;
+    border-color: #dadada;
   }
 
   input:checked ~ span {
-    border: 1px solid black;
+    border-color: black;
   }
 }
 

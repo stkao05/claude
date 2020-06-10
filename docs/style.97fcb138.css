@@ -491,6 +491,9 @@ summary {
 .book_content .foot_note {
   font-size: 12px;
 }
+.book_content[data-color=white] {
+  background: white;
+}
 .book_content[data-color=yellow] {
   background: #e8e7b2;
 }
@@ -517,15 +520,22 @@ summary {
   border-radius: 50%;
   width: 20px;
   height: 20px;
+  border: 1px solid #dadada;
 }
 .bg_radio input[value=grey] ~ span {
   background: #f9f9f9;
+  border-color: #f9f9f9;
 }
 .bg_radio input[value=yellow] ~ span {
   background: #e8e7b2;
+  border-color: #e8e7b2;
+}
+.bg_radio input[value=white] ~ span {
+  background: white;
+  border-color: #dadada;
 }
 .bg_radio input:checked ~ span {
-  border: 1px solid black;
+  border-color: black;
 }
 
 /* ---------------- section test ---------------- */
