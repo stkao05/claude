@@ -8,7 +8,7 @@ $section-padding: $spacing-sm;
 
 @font-face {
   font-family: Claude;
-  src: url("./claude.ttf");
+  src: url("../claude.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -42,63 +42,54 @@ details {
     list-style: none;
     width: 100%;
     cursor: pointer;
+    padding-left: $spacing-sm;
+
+    &:focus {
+      outline: none;
+    }
+
+    // Remove marker added by details polyfill
+    &::before {
+      display: none;
+    }
+
+    // Remove marker added by Chrome
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "→";
+      position: absolute;
+      right: $section-padding;
+      top: 0;
+    }
   }
 
-  > summary:focus {
-    outline: none;
+  &[open] {
+    summary {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+    summary::after {
+      content: "↓";
+      position: absolute;
+      right: $section-padding;
+      top: 0;
+    }
   }
 
-  // Remove marker added by details polyfill
-  > summary::before {
-    display: none;
-  }
-
-  // Remove marker added by Chrome
-  > summary::-webkit-details-marker {
-    display: none;
-  }
-
-  > summary::after {
-    content: "→";
-    position: absolute;
-    right: $section-padding;
-    top: 0;
-  }
-
-  &[open] summary::after {
-    content: "↓";
-    position: absolute;
-    right: $section-padding;
-    top: 0;
+  .detail_content {
+    display: inline-block;
+    position: relative;
+    margin-left: $spacing-lg;
+    z-index: 10;
   }
 }
 
-details {
-  position: relative;
-}
-
-summary {
-  padding-left: $spacing-sm;
-}
-
-details[open] {
-  summary {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-  }
-}
-
-.detail_content {
-  display: inline-block;
-  position: relative;
-  margin-left: $spacing-lg;
-  z-index: 10;
-}
-
-.f1,
-summary {
+.f1 {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4em;
@@ -112,7 +103,6 @@ summary {
     width: 80px;
   }
 }
-
 
 /* ---------------- section letter ---------------- */
 
@@ -144,6 +134,7 @@ summary {
 $bg-grey: #f9f9f9;
 $bg-yellow: #e8e7b2;
 $bg-white: white;
+$indent: 2em;
 
 .book_content {
   font-family: Claude;
@@ -167,26 +158,36 @@ $bg-white: white;
   h1 {
     font-size: 72px;
     font-weight: normal;
-    font-variation-settings: "opsz" 72;
     margin-top: 0;
     margin-bottom: 1em;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: normal;
-    font-variation-settings: "opsz" 24;
     margin-top: 0;
     margin-bottom: 0.5em;
   }
 
-  p {
-    font-size: 17px;
-    font-weight: normal;
-    font-variation-settings: "opsz" 17;
+  .body_text {
+    p {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.4em;
+
+      &:not(:first-child) {
+        text-indent: $indent;
+      }
+    }
+  }
+
+  .indent {
+    display: inline-block;
+    margin-right: $indent;
   }
 
   .foot_note {
+    line-height: 1.4em;
     font-size: 12px;
   }
 
@@ -271,9 +272,6 @@ $bg-white: white;
 
   label {
     width: 200px;
-  }
-
-  .range_test {
   }
 
   .range_value {

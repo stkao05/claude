@@ -117,48 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"script.js":[function(require,module,exports) {
-(function () {
-  function initBackgroundSwitch() {
-    var elmBook = document.querySelector(".book_content");
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-    function setSelectedColor() {
-      var checked = document.querySelector(".bg_radio input:checked");
-      elmBook.setAttribute("data-color", checked.value);
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
     }
 
-    setSelectedColor();
-    document.querySelector(".bg_radio").addEventListener("change", setSelectedColor);
-  }
+    cssTimeout = null;
+  }, 50);
+}
 
-  function initRangeControl() {
-    var rangeControls = document.querySelectorAll(".range_test");
-    rangeControls.forEach(function (rangeCtrl) {
-      var range = rangeCtrl.querySelector("input[type='range']");
-      var text = rangeCtrl.querySelector("input[type='text']");
-      var valDisplay = rangeCtrl.querySelector(".range_value");
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-      var render = function render() {
-        valDisplay.innerHTML = range.value;
-
-        if (range.getAttribute("name") === "optical_size") {
-          text.style.cssText = "font-variation-settings: \"opsz\" ".concat(range.value);
-        }
-
-        if (range.getAttribute("name") === "font_size") {
-          text.style.fontSize = "".concat(range.value, "px");
-        }
-      };
-
-      range.addEventListener("input", render);
-      render();
-    });
-  }
-
-  initBackgroundSwitch();
-  initRangeControl();
-})();
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../claude.ttf":[["claude.5ad181b4.ttf","claude.ttf"],"claude.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -362,4 +393,4 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
