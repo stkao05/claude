@@ -467,6 +467,7 @@ summary {
 }
 .book_content .author {
   font-size: 32px;
+  margin-bottom: 1em;
 }
 .book_content h1 {
   font-size: 72px;
@@ -480,7 +481,7 @@ summary {
   font-weight: normal;
   font-variation-settings: "opsz" 24;
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 .book_content p {
   font-size: 17px;
@@ -488,7 +489,7 @@ summary {
   font-variation-settings: "opsz" 17;
 }
 .book_content .foot_note {
-  font-size: 10px;
+  font-size: 12px;
 }
 .book_content[data-color=yellow] {
   background: #e8e7b2;

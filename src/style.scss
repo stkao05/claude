@@ -161,6 +161,7 @@ $bg-yellow: #e8e7b2;
 
   .author {
     font-size: 32px;
+    margin-bottom: 1em;
   }
 
   h1 {
@@ -176,7 +177,7 @@ $bg-yellow: #e8e7b2;
     font-weight: normal;
     font-variation-settings: "opsz" 24;
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   p {
@@ -186,7 +187,7 @@ $bg-yellow: #e8e7b2;
   }
 
   .foot_note {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   &[data-color="yellow"] {
