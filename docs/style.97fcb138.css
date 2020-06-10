@@ -486,7 +486,14 @@ details[open] summary {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 5;
+}
+
+.detail_content {
+  display: inline-block;
+  position: relative;
+  margin-left: 72px;
+  z-index: 10;
 }
 
 .f1,
@@ -502,10 +509,6 @@ summary {
 }
 .two_col .col_1 {
   width: 80px;
-}
-
-.detail_content {
-  padding-left: 72px;
 }
 
 /* ---------------- section letter ---------------- */

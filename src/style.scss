@@ -86,8 +86,15 @@ details[open] {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 5;
   }
+}
+
+.detail_content {
+  display: inline-block;
+  position: relative;
+  margin-left: $spacing-lg;
+  z-index: 10;
 }
 
 .f1,
@@ -106,9 +113,6 @@ summary {
   }
 }
 
-.detail_content {
-  padding-left: $spacing-lg;
-}
 
 /* ---------------- section letter ---------------- */
 
