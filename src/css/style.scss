@@ -137,6 +137,10 @@ $bg-yellow: #e8e7b2;
 $bg-white: white;
 $indent: 2em;
 
+.section_read {
+  padding-bottom: 0;
+}
+
 .book_content {
   font-family: Claude;
   max-width: 750px;
