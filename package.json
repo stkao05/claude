@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel -d ./docs src/index.html",
+    "dev": "parcel --no-source-maps -d ./docs src/index.html",
     "build": "parcel build -d ./docs --public-url /claude src/index.html"
   },
   "repository": {

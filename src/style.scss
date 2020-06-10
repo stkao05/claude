@@ -249,3 +249,19 @@ $bg-white: white;
 }
 
 /* ---------------- section test ---------------- */
+
+.section_test {
+  input[type="text"] {
+    display: block;
+    font-family: Claude;
+    border: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[name="optical_test_input"] {
+    font-size: 80px;
+  }
+}

@@ -13,15 +13,31 @@
       .addEventListener("change", setSelectedColor);
   }
 
-  //function initCollapser() {
-    //document.querySelector("details").addEventListener("toggle", event => {
-      //if (details.open) {
-          //event.target.classList.add("detail__open")
-      //} else {
-          //event.target.classList.remove("detail__open")
-      //}
-    //});
-  //}
+  function initRangeControl() {
+    const rangeControls = document.querySelectorAll(".range_test");
+    rangeControls.forEach(rangeCtrl => {
+      const range = rangeCtrl.querySelector("input[type='range']");
+      const text = rangeCtrl.querySelector("input[type='text']");
+      const valDisplay = rangeCtrl.querySelector(".range_value");
+
+      const render = () => {
+        valDisplay.innerHTML = range.value;
+
+        if (range.getAttribute("name") === "optical_size") {
+          text.style.cssText = `font-variation-settings: "opsz" ${range.value}`;
+        }
+
+        if (range.getAttribute("name") === "font_size") {
+          text.style.fontSize = `${range.value}px`;
+        }
+      };
+
+      range.addEventListener("input", render);
+
+      render();
+    });
+  }
 
   initBackgroundSwitch();
+  initRangeControl();
 })();

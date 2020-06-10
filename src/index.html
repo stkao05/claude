@@ -104,10 +104,51 @@
       </div>
     </section>
 
-    <section class="section_read">
-      <details class="details_reset">
+    <section class="section_test">
+      <details class="details_reset" open>
         <summary>Test</summary>
-        <div class="detail_content"></div>
+        <div class="detail_content">
+
+          <div class="range_test">
+            <div>
+              <label class="f1" for="optical_size">Forms of each master</label>
+              <input
+                type="range"
+                id="optical_size"
+                name="optical_size"
+                value="80"
+                min="6"
+                max="96"
+              />
+              <span class="range_value"></span>
+            </div>
+            <input
+              type="text"
+              value="Hamburgsfontivs"
+              name="optical_test_input"
+            />
+          </div>
+          <div class="range_test">
+            <div>
+              <label class="f1" for="font_size">Actual size</label>
+              <input
+                type="range"
+                id="font_size"
+                name="font_size"
+                value="80"
+                min="6"
+                max="96"
+              />
+              <span class="range_value"></span>
+            </div>
+            <input
+              type="text"
+              value="Hamburgsfontivs"
+              name="font_size"
+            />
+          </div>
+        </div>
+
       </details>
     </section>
 
@@ -140,12 +181,7 @@
               <span />
             </label>
             <label>
-              <input
-                type="radio"
-                id="bg_color"
-                name="bg_color"
-                value="white"
-              />
+              <input type="radio" id="bg_color" name="bg_color" value="white" />
               <span />
             </label>
           </div>

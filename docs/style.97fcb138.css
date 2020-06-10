@@ -539,5 +539,14 @@ summary {
 }
 
 /* ---------------- section test ---------------- */
-
-/*# sourceMappingURL=/style.97fcb138.css.map */
+.section_test input[type=text] {
+  display: block;
+  font-family: Claude;
+  border: 0;
+}
+.section_test input[type=text]:focus {
+  outline: none;
+}
+.section_test input[name=optical_test_input] {
+  font-size: 80px;
+}
