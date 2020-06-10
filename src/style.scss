@@ -35,10 +35,8 @@ body > section {
 }
 
 .details_reset {
-
   > summary {
   }
-
 }
 
 details {
@@ -79,10 +77,11 @@ details {
   }
 }
 
-.f1 {
+.f1,
+summary {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1em;
+  line-height: 1.4em;
   margin: 0px;
 }
 
@@ -156,6 +155,14 @@ $bg-yellow: #e8e7b2;
     padding: 36px 12px;
   }
 
+  header {
+    text-align: center;
+  }
+
+  .author {
+    font-size: 32px;
+  }
+
   h1 {
     font-size: 72px;
     font-weight: normal;
@@ -164,8 +171,7 @@ $bg-yellow: #e8e7b2;
     margin-bottom: 1em;
   }
 
-  h2,
-  .h2 {
+  h2 {
     font-size: 24px;
     font-weight: normal;
     font-variation-settings: "opsz" 24;
@@ -177,6 +183,10 @@ $bg-yellow: #e8e7b2;
     font-size: 17px;
     font-weight: normal;
     font-variation-settings: "opsz" 17;
+  }
+
+  .foot_note {
+    font-size: 10px;
   }
 
   &[data-color="yellow"] {
@@ -223,3 +233,5 @@ $bg-yellow: #e8e7b2;
     border: 1px solid black;
   }
 }
+
+/* ---------------- section test ---------------- */

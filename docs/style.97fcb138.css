@@ -395,10 +395,11 @@ details[open] summary::after {
   top: 0;
 }
 
-.f1 {
+.f1,
+summary {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1em;
+  line-height: 1.4em;
   margin: 0px;
 }
 
@@ -461,6 +462,12 @@ details[open] summary::after {
     padding: 36px 12px;
   }
 }
+.book_content header {
+  text-align: center;
+}
+.book_content .author {
+  font-size: 32px;
+}
 .book_content h1 {
   font-size: 72px;
   font-weight: normal;
@@ -468,8 +475,7 @@ details[open] summary::after {
   margin-top: 0;
   margin-bottom: 1em;
 }
-.book_content h2,
-.book_content .h2 {
+.book_content h2 {
   font-size: 24px;
   font-weight: normal;
   font-variation-settings: "opsz" 24;
@@ -480,6 +486,9 @@ details[open] summary::after {
   font-size: 17px;
   font-weight: normal;
   font-variation-settings: "opsz" 17;
+}
+.book_content .foot_note {
+  font-size: 10px;
 }
 .book_content[data-color=yellow] {
   background: #e8e7b2;
@@ -517,5 +526,7 @@ details[open] summary::after {
 .bg_radio input:checked ~ span {
   border: 1px solid black;
 }
+
+/* ---------------- section test ---------------- */
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
