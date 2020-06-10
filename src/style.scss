@@ -1,4 +1,5 @@
 @import "normalize.scss";
+@import "range.scss";
 
 $spacing-sm: 6px;
 $spacing: 12px;
@@ -18,7 +19,7 @@ html {
 }
 
 footer {
-  padding: $spacing;
+  padding: $section-padding;
 
   p {
     margin: 0;
@@ -32,11 +33,6 @@ footer {
 body > section {
   border-bottom: 1px solid black;
   padding: $section-padding 0;
-}
-
-.details_reset {
-  > summary {
-  }
 }
 
 details {
@@ -74,6 +70,23 @@ details {
     position: absolute;
     right: $section-padding;
     top: 0;
+  }
+}
+
+details {
+  position: relative;
+}
+
+summary {
+  padding-left: $spacing-sm;
+}
+
+details[open] {
+  summary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 }
 
@@ -123,24 +136,6 @@ summary {
 }
 
 /* ---------------- section read ---------------- */
-
-.section_read {
-  details {
-    position: relative;
-  }
-
-  summary {
-    padding-left: $spacing-sm;
-  }
-
-  details[open] {
-    summary {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-}
 
 $bg-grey: #f9f9f9;
 $bg-yellow: #e8e7b2;
@@ -263,5 +258,27 @@ $bg-white: white;
 
   input[name="optical_test_input"] {
     font-size: 80px;
+    margin: 0.5em 0;
+  }
+
+  input[type="text"] {
+    margin: 0.5em 0;
+  }
+
+  label {
+    width: 200px;
+  }
+
+  .range_test {
+  }
+
+  .range_value {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  .range_control {
+    display: flex;
+    align-items: center;
   }
 }

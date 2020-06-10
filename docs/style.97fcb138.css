@@ -338,6 +338,85 @@ template {
   display: none;
 }
 
+input[type=range] {
+  -webkit-appearance: none;
+  padding: 6px 0;
+  width: 200px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 200px;
+  height: 1px;
+  cursor: pointer;
+  background: #D1D1D1;
+  border-radius: 5px;
+  border: 0px solid black;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 0px solid white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ACA6A6;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #dedede;
+}
+input[type=range]::-moz-range-track {
+  width: 200px;
+  height: 1px;
+  cursor: pointer;
+  background: #D1D1D1;
+  border-radius: 5px;
+  border: 0px solid black;
+}
+input[type=range]::-moz-range-thumb {
+  border: 0px solid white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ACA6A6;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 200px;
+  height: 1px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 12px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #c4c4c4;
+  border: 0px solid black;
+  border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #D1D1D1;
+  border: 0px solid black;
+  border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+  border: 0px solid white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #ACA6A6;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #D1D1D1;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #dedede;
+}
+
 @font-face {
   font-family: Claude;
   src: url("/claude.5ad181b4.ttf");
@@ -350,7 +429,7 @@ html {
 }
 
 footer {
-  padding: 12px;
+  padding: 6px;
 }
 footer p {
   margin: 0;
@@ -393,6 +472,21 @@ details[open] summary::after {
   position: absolute;
   right: 6px;
   top: 0;
+}
+
+details {
+  position: relative;
+}
+
+summary {
+  padding-left: 6px;
+}
+
+details[open] summary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .f1,
@@ -439,18 +533,6 @@ summary {
 }
 
 /* ---------------- section read ---------------- */
-.section_read details {
-  position: relative;
-}
-.section_read summary {
-  padding-left: 6px;
-}
-.section_read details[open] summary {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .book_content {
   font-family: Claude;
   max-width: 750px;
@@ -549,4 +631,19 @@ summary {
 }
 .section_test input[name=optical_test_input] {
   font-size: 80px;
+  margin: 0.5em 0;
+}
+.section_test input[type=text] {
+  margin: 0.5em 0;
+}
+.section_test label {
+  width: 200px;
+}
+.section_test .range_value {
+  font-size: 10px;
+  margin-left: 5px;
+}
+.section_test .range_control {
+  display: flex;
+  align-items: center;
 }
