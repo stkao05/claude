@@ -37,6 +37,8 @@ body > section {
 
 details {
   position: relative;
+  border-bottom: 1px solid black;
+  padding: $section-padding 0;
 
   > summary {
     list-style: none;
@@ -62,14 +64,14 @@ details {
       content: "→";
       position: absolute;
       right: $section-padding;
-      top: 0;
+      top: $section-padding;
     }
   }
 
   &[open] {
     summary {
       position: absolute;
-      top: 0;
+      top: $section-padding;
       left: 0;
       z-index: 5;
     }
@@ -138,7 +140,9 @@ $bg-white: white;
 $indent: 2em;
 
 .section_read {
-  padding-bottom: 0;
+  &[open] {
+    padding-bottom: 0;
+  }
 }
 
 .book_content {
@@ -195,6 +199,8 @@ $indent: 2em;
   .foot_note {
     line-height: 1.4em;
     font-size: 12px;
+    margin-bottom: 0;
+    padding-bottom: 1em;
   }
 
   &[data-color="white"] {
